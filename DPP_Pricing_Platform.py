@@ -30,10 +30,19 @@ sheet_name = st.selectbox('Sheet Name', ['dpp_data1',
                                          'dpp_data6',
                                          'dpp_data7',
                                          ])
+#For heroku
+import os
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
 
 if st.button('Hit me'):
-    chormedriver_path = 'chromedriver_win32/chromedriver.exe'
-    driver = webdriver.Chrome(executable_path=chormedriver_path)
+    # For heroku
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    # chormedriver_path = 'chromedriver_win32/chromedriver.exe'
+    # driver = webdriver.Chrome(executable_path=chormedriver_path)
     sleep(2)
 
     # Initialize the website - First page
