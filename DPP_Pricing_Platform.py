@@ -11,9 +11,9 @@ from selenium.webdriver.support import expected_conditions as EC
 st.title('DPP Pricing Platform')
 
 # Rate URL
-user = st.sidebar.text_input('Input your user name:', 'tmartins.europcar')
+user = st.sidebar.text_input('Input your user name:')
 # Rate URL
-pword = st.sidebar.text_input('Input your password:', '2021Temporal*')
+pword = st.sidebar.text_input('Input your password:')
 
 # Rate URL
 dpp = st.text_input('Input Rate URL')
