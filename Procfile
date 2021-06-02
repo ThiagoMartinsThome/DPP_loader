@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run DPP_Pricing_Platform.py
